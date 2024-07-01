@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PICABOO</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* 기본 스타일은 모바일 레이아웃으로 설정 */
+body {
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: #fc3c1c;
+  color: #010101;
+}
+.header {
+  font-weight: 700;
+  font-size: 1.5em;
+  text-align: right;
+  margin-top: -12px;
+  color: #fff;
+}
+.main-title {
+  text-align: left;
+  font-size: 2.93em;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-weight: 800;
+  color: #ffffff; /* 흰색 */
+}
+.author {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: right;
+  color: #ffffff; /* 흰색 */
+}
+h2 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: left;
+}
+.subtitle {
+  font-size: 13.9px; /* 수정된 값 적용 */
+  text-align: center;
+  font-weight: 500;
+  color: #010101;
+}
+.content {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f2f2f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  text-align: left;
+}
+.content p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.footer {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px; /* 아래 여백 추가 */
+  color: #ffffff;
+}
+.footer a {
+  margin: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;  
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer-text {
+  font-weight: 600;
+  font-size: 13.9px;
+}
+.image-wrapper {
+  text-align: center; /* 이미지 중앙 정렬 */
+  margin-bottom: 20px; /* 이미지와 텍스트 간격 조정 */
+}
+.image-wrapper img {
+  max-width: 100%; /* 이미지가 부모 요소에 맞춰 최대 너비 지정 */
+  border-radius: 8px; /* 이미지 모서리 둥글게 처리 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 이미지 그림자 효과 */
+}
+
+/* 730px 이상 화면에서의 스타일 설정 */
+@media (min-width: 731px) {
+  body {
+    margin: 0 auto; /* 모든 콘텐츠를 중앙에 정렬 */
+    max-width: 730px; /* 최대 너비 제한 수정 */
+    background-color: #fc3c1c; /* 배경색은 유지 */
+    padding: 20px; /* 여백 추가 */
+  }
+  .header {
+    font-size: 1.5em;
+    text-align: right;
+    margin-top: -12px;
+  }
+  .main-title {
+    text-align: left;
+    font-size: 2.93em;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  .author {
+    font-size: 1.2em;
+    text-align: right;
+  }
+  h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .subtitle {
+    font-size: 13.9px;
+    text-align: center;
+  }
+  .content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f2f2f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .content p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px; /* 아래 여백 추가 */
+  }
+  .footer a {
+    margin: 5px;
+    font-size: 24px;
+  }
+  .footer-text {
+    font-size: 13.9px;
+  }
+  .image-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-wrapper img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 730px 이상에서는 추가적인 스타일 적용 필요 없음 */
+}
+
+/* 385px 이하 화면에서의 스타일 설정 */
+@media (max-width: 385px) {
+  body {
+    margin: 0 auto; /* 모든 콘텐츠를 중앙에 정렬 */
+    padding: 15px; /* 여백 추가 */
+    background-color: #fc3c1c; /* 배경색은 유지 */
+  }
+  .header {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 0;
+  }
+  .main-title {
+    font-size: 2em;
+    text-align: center;
+  }
+  .author {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.5em;
+    text-align: left;
+  }
+  .subtitle {
+    font-size: 12px;
+    text-align: center;
+  }
+  .content {
+    padding: 15px;
+  }
+  .content p {
+    font-size: 1em;
+  }
+  .footer {
+    margin-bottom: 20px;
+  }
+  .footer a {
+    font-size: 20px;
+  }
+  .footer-text {
+    font-size: 12px;
+  }
+  .image-wrapper img {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    Pick.Car.Boot
+  </header>
+  <h1 class="main-title">KG 모빌리티의<br>마지막 부활 기회.</h1>
+  <div class="author">신지성</div>
+  
+  <div class="content">
+    <div class="image-wrapper">
+      <img src="https://i.namu.wiki/i/iOq5FF9VWBYkpNhF-6oeWDHlMg-FrrxpKCv24e18Ih33X012Kjhtv3-4J7egjUX1LKuvk2SwOir4-GI6U2fwo0RrMoE8TarOkKpyGsxOWMHXMpwTxyuvR1GTP35ncJNfj6O_Lu2lG7XyvchjJL0MAA.webp" alt="KGM Image">
+    </div>
+    <h2>글을 시작하며,</h2>
+    <p>Pick.Car.Boot의 첫번째 글을 KG 모빌리티로 시작하고자 결정한 데에는 큰 의미가 있습니다. 국내에서 생산을 결정하는 외국 브랜드들이 늘어가는 지금 방향을 정하지 못한 것 처럼 보이는 KGM이 국산 외국 브랜드에 패하지 않고 특색을 갖추는 좋은 결정을 해서 한국의 Rivian이 되길 바라는 마음으로 첫번째 글을 KGM으로 결정했습니다.<br>= HMG, KGM, 쉐보레, 폴스타, 르노 화이팅! =</p>
+
+    <h2>1. KGM의 주요고객은 누구인가?</h2>
+    <p>KGM은 구 쌍용자동차로써 픽업트럭을 사랑하는 "아저씨"들과 자동차에 큰 관심이 없던 값싼 자동차를 원하던 사람들이 찾던 브랜드였다. 하지만 토레스의 출시로 현대•기아 자동차의 투싼, 스포티지에 관심을 갖던 고객중 일부 유치에 성공해 기존 고객이 아닌 새로운 소비자를 만날 수 있어었다.<br>==> 값싼 자동차, 픽업트럭</p>
+    
+    <h2>2. KGM의 경쟁사업자는 누구인가?</h2>
+    <p>지금 HMG는 세계 3위 자동차 기업이다. KGM의 경쟁사업자는 현대가 아닌 르노와 BYD를 비롯한 중국자동차 회사들이다. 실제로 중국자동차 회사들이 국내 진출을 한다면 KGM을 고려하는 고객들은 중국자동차들도 관심을 보일 가능성이 높다(가성비 추구 성향)<br>==> KGM의 경쟁사는 BYD를 비롯한 중국차</p>
+    
+    <h2>3. 픽업트럭은 우위를 점하고 있는가?</h2>
+    <p>아쉽게도 1번에서 서술했던 것처럼 아저씨들이 좋아하는 자동차이다. 과거에 비해 소비능력이 향상된 사람이 많을 것으로 예상하며, 과거에 비해 외산 픽업트럭의 접근성이 비약적으로 향상되어 포드, 쉐보레 등의 픽업트럭 제조사에 비해 성능, 안전, 편의성 부문에서 강점이 있다고 보기 어렵다.<br>==> 픽업 고집 필요 ×</p>
+    
+    <h2>4. KGM은 지금 어떠한가?</h2>
+    <p>BYD에서 전기차 기슬을 제공받는 지금 KGM은 더 많은 중국산 비중을 두려워 할 필요가 없다. 부품 및 운전자 보조기능들을 더 많이 수입하여 R&D와 제조원가를 줄이는 방법을 취할 수 있다. 특히 자율주행의 경우 데이터를 쌓을 수 있는 기간이 짧기 때문에 차라리 중국에서 기술을 수입하는 것이 도움이 될 것이라고 생각한다.<br>==> 중국의 기술 도입으로 R&D, 제조원가 하향조정</p>
+
+<h2>5. 테슬라의 성공의 원인</h2>
+    <p>테슬라는 차를 잘만들어서 전기차 1위가 아니다.
+오히려 단차, 승차감 등 자동차로서 기본기를 잘하지 못하지만 '오토파일럿' 하나만으로 소비자들의 선택을 받는다. 그리고 얼리어답터, 합리적인 소비자 라는 이미지를 얻을 수 있도록 사회적 인식이 잡혀있다.<br>==> 테슬라는 자동차를 팔지 않는다.</p>
+    
+    <h2>6. KGM의 지향점</h2>
+    <p>KGM이 앞으로 시장에서 살아남기 위해서는 이미지를 파는 회사가 되어야 한다. 'KGM을 사는 사람은 "합리적"이야' 라는 이미지를 만들어야 한다. 세상에는 현대차가 제공하는 풍족한 옵션을 원치 않는 사람들이 존재한다. 합리적이라는 이미지를 만들기 위해 우선순위가 낮은 옵션은 최대한 배제해 합리적인 차를 만들어야 한다.<br>==> "합리적인 소비자" 라는 이미지 구축</p>
+    
+    <h2>7. 합리적인 자동차를 만들기 위해.</h2>
+    <p>테슬라를 통해 계기판이 운전자 앞에 없어도 된다는 것이 증명되었다. 지금 현대차처럼 모니터를 2개 다는 것은 KGM에게 쓸모없는 행위라고 생각한다. 전기차 시대의 계기판에는 속도, 배터리, PRND, 내비게이션 방향 정도만 표시하면 된다(이 기능들은 HUD와 겹치는 것이 많다) 나머지 정보는 중앙 디스플레이에 테슬라처럼 몰아두면 된다. 그리고 계기판도 너무 큰 디스플레이로 비용을 낭비하기보다. 토요타의 프리우스 계기판처럼 얇은 디스플레이를 운전자 앞쪽 멀리에 위치해 HUD와 계기판을 통합해서 비치하면 된다. 그리고 얇은 디스플레이와 테슬라처럼 큰 디스플레이는 더 다양한 용도로 사용 가능할 것이다.<br>==> 비용 절감을 위해 불필요한 것들을 줄이다.</p>
+    
+    <h2>8. KGM의 헤리티지</h2>
+    <p>역사가 오래된 브랜드인 만큼 KGM(쌍용차)역시 헤리티지가 존재한다. "픽엄트럭,자연, 캠핑" 이런 단어는 KGM을 떠올리게 만든다. 전기 픽업트럭은 KGM에게 '기회가 될 수 있다.' 포드, 쉐보레가 전기 픽업트럭을 본격적으로 밀고있지 않는 지금 KGM이 먼저 전기 픽업트럭 시장에 도전해야 한다고 생각한다. BYD도 전기 픽업을 제작하는 지금 전기 픽업트럭을 통해 브랜드의 헤리티지를 보존하며 앞으로 나가야 한다고 생각한다.<br>==> 역사와 미래를 향한 도전 MIX</p>
+    
+    <h2>9. KGM의 인건비 문제</h2>
+    <p>KGM은 구 쌍용차 시절부터 쌓인 임금문제가 심각하다. 앞으로 인건비를 줄이는 것이 지속가능한 KGM의 중요한 방법이라고 생각한다. 이 역시 내연기관에 비해 단순한 구조와 하청으로 해결할 수 있는 부분이 많은 전기차동차가 해법이라고 생각한다. 테슬라 및 현대자동차 그리고 최근 자동차를 생산 시작한 샤오미를 보면 전기자동차 생산에서는 자동화 공정의 비율을 내연기관에 비해 상당히 높게 가져갈 수 있다는 것을 알 수 있다.<br>==> 전기차 전환으로 생산비(인건비) 절감</p>
+    
+    <h2>10. 다른 기업에서 영감을 얻기</h2>
+    <p>KGM의 전기차 출시 이전에 KGM과 비슷한 분이기를 보여주는 기업이 미국에 존재했다. Rivian 자동차 회사는 자연, 트럭을 중심으로 브랜드 서사를 지어왔다. 다년간의 연구를 통해 전기차 시대의 픽업트럭을 가장 잘 나타내는 Rivian R1T에게서 KGM은 배울점이 많다고 생각한다.<br>==> 선발주자에게서 영감 얻기</p>
+    
+    <p class="subtitle">2024년 7월 1일 월요일에 작성되었습니다.</p>
+    
+  </div>
+
+  <!-- 푸터 추가 -->
+  <div class="footer">
+    <a href="https://github.com/JisungEda55/picaboo/" target="_blank"><i class="fab fa-github" style="color: #f2f2f7;"></i></a>
+    <a href="https://youtube.com/@YouTube" target="_blank"><i class="fab fa-youtube" style="color: #f2f2f7;"></i></a>
+    <p class="footer-text">2024 Pick.Car.Boot</p>
+  </div>
+
+  <!-- Font Awesome CDN 추가 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
+  
+</body>
+</html>
